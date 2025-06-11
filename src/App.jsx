@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Welcome from './components/Welcome'
+import AboutMe from './components/AboutMe'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -8,6 +9,7 @@ function App() {
   return (
     <>
     <Welcome/>
+    <AboutMe/>
     </>
   )
 }
