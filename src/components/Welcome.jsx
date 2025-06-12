@@ -1,6 +1,7 @@
 import React from 'react';
 import SatakshiLogo from './SatakshiLogo';
 
+
 const Welcome = () => {
   return (
     <div className="relative h-screen bg-black text-white flex flex-col items-center justify-center text-center space-y-6 px-4 overflow-hidden">
@@ -19,6 +20,7 @@ const Welcome = () => {
         <SatakshiLogo />
       </h1>
       <p className="text-3xl md:text-4xl  lg:text-5xl font-['Instrument_Serif'] z-10">Sit Back And Enjoy</p>
+  
     </div>
   );
 };

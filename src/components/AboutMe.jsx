@@ -102,7 +102,7 @@ const StackedImages = () => {
     initial={{ opacity: 0, y: 20 }}
     animate={descControls}
     variants={{
-      visible: { opacity: 1, y: 0, transition: { duration: 1,delay:1.5, ease: "easeOut" } }
+      visible: { opacity: 1, y: 0, transition: { duration: 1,delay:1.3, ease: "easeOut" } }
     }}
     className="flex flex-col items-center justify-center text-white py-2 px-6">
     <div className="text-2xl text-center leading-relaxed max-w-4xl font-[Forum]">
@@ -113,7 +113,7 @@ const StackedImages = () => {
     <span className="inline-block">
       <Typewriter
         options={{
-          strings: ["Fullstack", "Frontend", "Creative Coder"],
+          strings: ["Fullstack", "Frontend"],
           autoStart: true,
           loop: true,
           delay: 75,
@@ -126,7 +126,7 @@ const StackedImages = () => {
   <p className="text-2xl text-center leading-relaxed max-w-4xl font-[Forum] mt-4">
     by day and a dreamer by night.<br />
     I’m driven by my creative visions, and the joy of <br />bringing them to life through design and code. <br />
-    I build with curiosity, care, and code. <br />
+    I build with curiosity, care, and COFFEE. <br />
     <span className="font-[Alex_Brush]"> always learning, always evolving.</span>
   </p>
     </motion.div>

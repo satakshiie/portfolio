@@ -3,6 +3,7 @@ import Welcome from './components/Welcome';
 import AboutMe from './components/AboutMe';
 import Navbar from './components/Navbar';
 import Skills from './components/Skills';
+import Projects from './components/Projects';
 
 function App() {
   return (
@@ -17,7 +18,14 @@ function App() {
       <section id="skills">
         <Skills />
       </section>
+
+      <section id="projects">
+        <Projects />
+      </section>
+
+
     </>
+    
   );
 }
 
