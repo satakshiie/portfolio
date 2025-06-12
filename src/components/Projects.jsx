@@ -57,14 +57,13 @@ const Projects = () => {
   const fadeIn3 = useTransform(scrollYProgress, [0.35, 0.45], [0, 1]);
 
   return (
-    <div ref={containerRef} className="h-[500vh] bg-black text-white relative flex">
-
+    <div ref={containerRef} className="h-[500vh] bg-black text-white relative flex flex-col md:flex-row">
       {/* Left Side Saturn */}
-      <div className="sticky top-0 w-1/2 h-screen flex justify-center items-center">
-        <Spline scene="https://prod.spline.design/QWKEXBxdEzt3SPsZ/scene.splinecode"   onLoad={(spline) => (splineRef.current = spline)} />
-      </div>
+      <div className="sticky top-0 w-full h-screen z-0 md:w-1/2">
+  <Spline scene="https://prod.spline.design/QWKEXBxdEzt3SPsZ/scene.splinecode" onLoad={(spline) => (splineRef.current = spline)} />
+</div>
 
-      <div className="w-1/2 flex flex-col justify-center">
+<div className="absolute top-0 left-0 w-full h-full z-10 flex flex-col md:static md:w-1/2 md:flex md:flex-col md:justify-center">
     {projects.map((project, idx) => (
       <motion.div
         key={idx}
