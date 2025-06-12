@@ -7,9 +7,24 @@ import sample3 from "../assets/sample3.png";
 import StarBorder from './StarBorder'
 
 const projects = [
-  { title: "FinPort", description: "A portfolio tracker that helps users monitor investments and analyze trends with moving averages, risk analysis, and daily returns to make smarter financial decisions." , techStack: "Html,CSS,JS | Flask | MySQL | Plotly | yFinance | Python"},
-  { title: "SereneYou", description: "SereneYou is more than just a wellness app — it’s a soothing digital companion for those navigating life far from home. SereneYou offers mood tracking, mindfulness tools, and comforting features that promote mental clarity, emotional expression, and peace.", techStack: "Xcode | PencilKit | AVFoundation | iOS Deployment" },
-  { title: "Mental Health Chatbot", description: "An AI-powered support system integrating sentiment analysis (TextBlob) and symptom detection (scikit-learn, TF-IDF) to offer empathetic conversations and early mental health insights, built with Flask and a calming frontend interface.",  techStack:"Python | Flask | TextBlob | Scikit-learn | TF-IDF | TinyLLama | Html,CSS,JS" },
+  { 
+    title: "FinPort", 
+    description: "A portfolio tracker that helps users monitor investments and analyze trends with moving averages, risk analysis, and daily returns to make smarter financial decisions.",
+    techStack: "Html,CSS,JS | Flask | MySQL | Plotly | yFinance | Python",
+    link: "https://github.com/satakshiie/FinPort"   // <-- add link
+  },
+  { 
+    title: "SereneYou", 
+    description: "SereneYou is more than just a wellness app — it’s a soothing digital companion for those navigating life far from home. SereneYou offers mood tracking, mindfulness tools, and comforting features that promote mental clarity, emotional expression, and peace.",
+    techStack: "Xcode | PencilKit | AVFoundation | iOS Deployment",
+    link: "https://github.com/satakshiie/SereneYou"  // <-- add link
+  },
+  { 
+    title: "Mental Health Chatbot", 
+    description: "An AI-powered support system integrating sentiment analysis (TextBlob) and symptom detection (scikit-learn, TF-IDF) to offer empathetic conversations and early mental health insights, built with Flask and a calming frontend interface.",
+    techStack: "Python | Flask | TextBlob | Scikit-learn | TF-IDF | TinyLLama | Html,CSS,JS",
+    link: "https://github.com/satakshiie/SentimentAnalysisBot"  // <-- add link
+  },
 ];
 
 const Projects = () => {
@@ -49,61 +64,35 @@ const Projects = () => {
         <Spline scene="https://prod.spline.design/QWKEXBxdEzt3SPsZ/scene.splinecode"   onLoad={(spline) => (splineRef.current = spline)} />
       </div>
 
-      <div className="w-1/2 relative">
-
-        <motion.div
-          style={{ opacity: fadeIn1 }}
-          className="min-h-screen flex justify-center items-center"
-        >
-          <div className="w-[350px] md:w-[400px] p-4 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md shadow-lg">
-            <h2 className="text-4xl font-bold mb-4 font-[Instrument_Serif]">{projects[0].title}</h2>
-            <img src={sample3} 
-                 alt="FinPort Preview" 
-                 className="w-full max-h-[250px] rounded-xl object-cover mb-4"
-             />
-            <p className="text-lg font-[Forum]">{projects[0].description}</p>
-            <p className="text-lg font-[Forum] mt-2">Tech Stack: {projects[0].techStack}</p>
-          </div>
-        </motion.div>
-
-        <motion.div
-          style={{ opacity: fadeIn2 }}
-          className="min-h-screen flex justify-center items-center"
-        >
-          <div className="w-[350px] md:w-[400px] p-4 rounded-2xl border border-white/20 bg-white/10 shadow-lg">
-            <h2 className="text-4xl font-bold mb-4 font-[Instrument_Serif]">{projects[1].title}</h2>
-            <img src={sample1} 
-                 alt="FinPort Preview" 
-                 className="w-full max-h-[250px] rounded-xl object-cover mb-4"
-             />
-            <p className="text-lg font-[Forum]">{projects[1].description}</p>
-            <p className="text-lg font-[Forum] mt-2">Tech Stack: {projects[1].techStack}</p>
-            <StarBorder  as="a" href="https://github.com/satakshiie/SereneYou" 
-               className="px-6 py-2 text-white font-semibold mt-4"
-               color="#FFD700"
-               onClick={() => window.open(link, "_blank")}
-            > View More</StarBorder>
-          </div>
-        </motion.div>
-
-        <motion.div
-          style={{ opacity: fadeIn3 }}
-          className="min-h-screen flex justify-center items-center"
-        >
-          <div className="relative z-10 w-[350px] md:w-[400px] p-4 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md shadow-lg">
-            <h2 className="text-4xl font-bold mb-4 font-[Instrument_Serif]">{projects[2].title}</h2>
-            <img src={sample2} 
-                 alt="FinPort Preview" 
-                 className="w-full max-h-[250px] rounded-xl object-cover mb-4"
-             />
-            <p className="text-lg font-[Forum]">{projects[2].description}</p>
-            <p className="text-lg font-[Forum] mt-2">Tech Stack: {projects[2].techStack}</p>
-        
-          </div>
-        </motion.div>
-
-      </div>
-    </div>
+      <div className="w-1/2 flex flex-col justify-center">
+    {projects.map((project, idx) => (
+      <motion.div
+        key={idx}
+        className="h-screen flex justify-center items-center"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <div className="w-[350px] md:w-[400px] p-4 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md shadow-lg">
+          <h2 className="text-4xl font-bold mb-4 font-[Instrument_Serif]">{project.title}</h2>
+          <img src={idx === 0 ? sample3 : idx === 1 ? sample1 : sample2} alt={`${project.title} Preview`} className="w-full max-h-[250px] rounded-xl object-cover mb-4" />
+          <p className="text-lg font-[Forum]">{project.description}</p>
+          <p className="text-lg font-[Forum] mt-2">Tech Stack: {project.techStack}</p>
+          <StarBorder  
+   as="a" 
+   href={project.link} 
+   className="px-6 py-2 text-white font-semibold mt-4"
+   color="#FFD700"
+   target="_blank"
+   rel="noopener noreferrer"
+>
+  View More
+</StarBorder>
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</div>
   );
 };
 
