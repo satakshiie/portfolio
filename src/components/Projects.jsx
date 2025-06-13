@@ -63,7 +63,7 @@ const Projects = () => {
 
       <div className="absolute top-10 w-full z-20">
       <FadeInOnView className="mb-8">
-      <h2 className="text-center text-6xl lg:text-7xl font-['Instrument_Serif']">Projects </h2>
+      <h2 className="text-center text-6xl lg:text-7xl font-['Instrument_Serif'] mb-5">Projects </h2>
       </FadeInOnView>
       </div>
 
@@ -72,7 +72,7 @@ const Projects = () => {
   <Spline scene="https://prod.spline.design/QWKEXBxdEzt3SPsZ/scene.splinecode" onLoad={(spline) => (splineRef.current = spline)} />
 </div>
 
-<div className="absolute top-0 left-0 w-full h-full z-10 flex flex-col md:static md:w-1/2 md:flex md:flex-col md:justify-center">
+<div className="absolute top-0 left-0 w-full h-full z-10 flex flex-col md:static md:w-1/2 md:flex md:flex-col md:justify-cente mt-32">
 <div 
   className="
     absolute top-0 right-0 md:w-1/2 h-[40vh]
