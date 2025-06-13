@@ -27,15 +27,15 @@ const Skills = () => {
         <h2 className="text-6xl lg:text-7xl font-['Instrument_Serif']">Skills</h2>
       </FadeInOnView>
 
-      {/* Decorations */}
+
       <img src={design1} alt="space-left" className="absolute bottom-0 left-0 w-[30vw] sm:w-[25vw] md:w-[20vw] opacity-70" />
       <img src={design2} alt="space-right" className="absolute top-0 right-0 w-[30vw] sm:w-[25vw] md:w-[20vw] opacity-70" />
 
-      {/* Main constellation image */}
+
       <div className="relative flex justify-center items-center">
         <img src={constellation} alt="constellation" className="max-w-[80vw] md:max-w-[60vw] lg:max-w-[50vw]" />
 
-        {/* Animated Labels */}
+
         <AnimatedLabel text="Languages →" top="18%" left="3%" delay={0.5} direction="right" controls={controls} />
         <AnimatedLabel text="← Framework/Library" top="8%" right="3%" delay={1} direction="left" controls={controls} />
         <AnimatedLabel text="← Other Skills" bottom="5%" right="-10%" delay={1.5} direction="left" controls={controls} />

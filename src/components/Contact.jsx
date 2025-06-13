@@ -21,15 +21,15 @@ const Contact = () => {
   }, []);
 
   const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #000000 50%, ${color})`;
-// Handle Submit
+
 const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs.sendForm(
-      'service_8vxh3ed',      // Replace with your Service ID
-      'template_we6vp6o',     // Replace with your Template ID
+      'service_8vxh3ed',    
+      'template_we6vp6o',     
       form.current,
-      'RCRpaIveiCRoLHq4r'       // Replace with your Public Key (API key)
+      'RCRpaIveiCRoLHq4r'       
     )
     .then((result) => {
       console.log(result.text);
@@ -46,7 +46,7 @@ const sendEmail = (e) => {
       className="relative w-full min-h-screen bg-black overflow-hidden flex justify-center items-center"
       style={{ background: backgroundImage }}
     >
-      {/* Stars */}
+
       <div className="absolute inset-0 z-0">
         <Canvas camera={{ position: [0, 0, 1] }}>
           <Stars
@@ -62,7 +62,7 @@ const sendEmail = (e) => {
       </div>
       <div className="relative z-10 text-white text-center px-4">
 
-{/* Centered Title */}
+
 <h2 className="text-5xl lg:text-6xl font-[Instrument_Serif] mb-20">
   <ShinyText>Get In Touch</ShinyText>
 </h2>
@@ -87,7 +87,7 @@ const sendEmail = (e) => {
     </div>
   </div>
 
-  {/* Right Side — Form */}
+
   <div className="backdrop-blur-xl bg-white/10 border border-white/5 p-8 rounded-3xl shadow-lg w-full max-w-md">
             <h3 className="text-xl font-semibold mb-6">Your Details</h3>
             
